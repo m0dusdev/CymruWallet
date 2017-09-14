@@ -22,7 +22,7 @@ import java.net.URISyntaxException;
 
         setLayout(new BorderLayout());
         setTitle("About");
-        setSize(170, 90);
+        setSize(190, 90);
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
@@ -35,7 +35,7 @@ import java.net.URISyntaxException;
         jEditorPane.setFont(new Font("Futura", Font.BOLD, 25));
         jEditorPane.setBackground(Color.decode("#EEEEEE"));
         jEditorPane.setForeground(Color.decode("#212121"));
-        jEditorPane.setText("cymrucoinwallet v02");
+        jEditorPane.setText("cymrucoinwallet v0.2");
 
         add(jEditorPane, SwingConstants.CENTER);
     }
