@@ -35,7 +35,7 @@ import java.net.URISyntaxException;
         jEditorPane.setFont(new Font("Futura", Font.BOLD, 25));
         jEditorPane.setBackground(Color.decode("#EEEEEE"));
         jEditorPane.setForeground(Color.decode("#212121"));
-        jEditorPane.setText("cymrucoinwallet");
+        jEditorPane.setText("cymrucoinwallet v02");
 
         add(jEditorPane, SwingConstants.CENTER);
     }
