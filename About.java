@@ -32,11 +32,10 @@ import java.net.URISyntaxException;
         jEditorPane.setEditable(false);
 
 
-        jEditorPane.setFont(new Font("Futura", Font.BOLD, 28));
+        jEditorPane.setFont(new Font("Futura", Font.BOLD, 25));
         jEditorPane.setBackground(Color.decode("#EEEEEE"));
         jEditorPane.setForeground(Color.decode("#212121"));
-        jEditorPane.setText("    cymrucoin desktop wallet " +
-                "vNAN ");
+        jEditorPane.setText("cymrucoinwallet");
 
         add(jEditorPane, SwingConstants.CENTER);
     }

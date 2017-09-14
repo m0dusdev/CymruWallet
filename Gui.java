@@ -100,7 +100,7 @@ public class Gui extends JFrame {
         // start the update thread
         FromProcess process = new FromProcess();
         FromProcess.getLog();
-        process.startUpdateThread();
+        process.startUpdate();
     }
 
     // set version text
@@ -155,12 +155,7 @@ public class Gui extends JFrame {
             // console -> showConsole menu item
             JMenuItem showConsole = new JMenuItem("Dump log to console");
 
-            showConsole.addActionListener((e) -> {
-
-                    FromProcess.getLog();
-
-
-            });
+            showConsole.addActionListener((e) -> FromProcess.getLog());
 
             console.add(showConsole);
 
