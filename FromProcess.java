@@ -13,13 +13,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * Gets data from daemon json output
  */
 
-class FromProcess {
-
-    private static AtomicBoolean running = new AtomicBoolean(false);
+public class FromProcess {
 
 
     // run a command in the working directory of the wallet
-    static void doCmd(String command) {
+    public static void doCmd(String command) {
         try {
             Process commandProc = Runtime.getRuntime().exec(command);
             commandProc.waitFor();
@@ -80,18 +78,21 @@ class FromProcess {
     /**
      * Starts the update loop that reads the output of
      * <Code>"./cymrucoind getinfo > log.txt" </Code>
+     * @see cymruWallet.UpdateThread
      */
-    void startUpdate() {
-        doCmd("./cymrucoind &");
-        System.out.print("started");
-        doCmd("./cymrucoind getinfo > log.txt");
-        Gui.addToConsole("UPDATED WALLET INFO @ " + new Date().toString());
-        Gui.addToConsole("Started update\n");
+   void startUpdate() {
 
+        while (true){
+            UpdateThread update = new UpdateThread();
+            update.run();
 
-        getLog(); // read from file
+            try {
+                wait(2000);
+            }catch (InterruptedException ie ) {
+                Gui.addToConsole("Could not wait the update thread");
+            }
 
-        Gui.addToConsole("Started sleep");
+        }
 
 
     }
