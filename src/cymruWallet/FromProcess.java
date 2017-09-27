@@ -114,7 +114,7 @@ final class FromProcess {
      * helper function to stop the cymruCoin daemon
      */
     void stopDeamon() {
-        doCmd("./cymrucoind stop", true);
+        doCmd("./cymrucoind stop ", true);
     }
 
 
